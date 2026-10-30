@@ -26,3 +26,15 @@ html,body{height:100%;min-height:0;overflow:hidden}
 .sequence-group .sequence-step.sequence-substep{min-height:34px}
 @media(max-width:700px){.sequence-list{gap:7px;padding-bottom:10px}.sequence-list>li{flex-basis:154px}.sequence-list>li.sequence-group{flex-basis:210px}.sequence-group .sequence-step.sequence-substep{min-height:32px}}
 @media(max-width:380px){.sequence-list>li{flex-basis:145px}.sequence-list>li.sequence-group{flex-basis:198px}}
+
+/* Activity route is a vertical, scrollable sequence from 0 through 7. */
+html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
+.page{height:auto;min-height:100svh;overflow:visible;grid-template-rows:132px auto auto;align-content:start}
+.sequence-list{display:grid;flex:initial;grid-template-columns:minmax(0,1fr);grid-auto-rows:max-content;align-content:start;gap:7px;overflow:visible;padding:0;scroll-snap-type:none}
+.sequence-list>li{width:100%;flex:none;scroll-snap-align:none}
+.sequence-list>li.sequence-group{width:100%;flex:none;height:auto;align-self:auto}
+.sequence-list>li>.sequence-step{width:100%;min-height:48px}
+.sequence-group .substeps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.map-side-note{align-self:stretch}
+@media(max-width:700px){.page{height:auto;min-height:100svh;overflow:visible;grid-template-rows:122px auto auto}.sequence-list{gap:6px}.sequence-list>li{width:100%;flex:none}.sequence-list>li.sequence-group{width:100%;flex:none}.sequence-list>li>.sequence-step{min-height:42px}.sequence-group .substeps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){.page{grid-template-rows:112px auto auto}.sequence-group .substeps{grid-template-columns:minmax(0,1fr)}}
