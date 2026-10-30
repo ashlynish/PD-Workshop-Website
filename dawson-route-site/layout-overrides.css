@@ -73,5 +73,5 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
 .call-intro{margin:0 0 10px;color:#687970;font-size:14px}
 .contact-link{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:12px 14px;border:1px solid rgba(52,78,67,.16);border-radius:12px;background:#fffdf6;color:#283a34;text-decoration:none}
 .contact-link>span:first-child{display:grid;gap:4px}.contact-link small{color:#687970;font-size:12px}.contact-link>span:last-child{color:#557c6d;font-size:20px}
-@media(max-width:700px){.header{gap:6px}.header-actions{gap:5px;margin-top:10px}.helper-action{min-height:34px;padding:6px 8px;gap:4px;font-size:10px}.helper-action span{width:19px;height:19px;font-size:12px}.helper-dialog{padding:17px}.dialog-heading h2{font-size:22px}}
+@media(max-width:700px){.header{flex-direction:column;align-items:flex-start;gap:4px}.header-actions{gap:5px;margin-top:3px}.helper-action{min-height:34px;padding:6px 8px;gap:4px;font-size:10px}.helper-action span{width:19px;height:19px;font-size:12px}.helper-dialog{padding:17px}.dialog-heading h2{font-size:22px}}
 @media(max-width:380px){.header-actions{gap:4px}.helper-action{padding:5px 6px;font-size:9px}.helper-action span{width:17px;height:17px}}
