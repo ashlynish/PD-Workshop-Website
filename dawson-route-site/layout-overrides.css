@@ -34,7 +34,8 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
 .sequence-list>li{width:100%;flex:none;scroll-snap-align:none}
 .sequence-list>li.sequence-group{width:100%;flex:none;height:auto;align-self:auto}
 .sequence-list>li>.sequence-step{width:100%;min-height:48px}
-.sequence-group .substeps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sequence-group .substeps{grid-template-columns:minmax(0,1fr)}
+.map{justify-self:end;align-self:start}
 .map-side-note{align-self:stretch}
-@media(max-width:700px){.page{height:auto;min-height:100svh;overflow:visible;grid-template-rows:122px auto auto}.sequence-list{gap:6px}.sequence-list>li{width:100%;flex:none}.sequence-list>li.sequence-group{width:100%;flex:none}.sequence-list>li>.sequence-step{min-height:42px}.sequence-group .substeps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.page{height:auto;min-height:100svh;overflow:visible;grid-template-rows:122px auto auto}.sequence-list{gap:6px}.sequence-list>li{width:100%;flex:none}.sequence-list>li.sequence-group{width:100%;flex:none}.sequence-list>li>.sequence-step{min-height:42px}.sequence-group .substeps{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:380px){.page{grid-template-rows:112px auto auto}.sequence-group .substeps{grid-template-columns:minmax(0,1fr)}}
