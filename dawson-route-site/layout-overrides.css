@@ -142,3 +142,23 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
   .helper-action{padding:4px 5px;font-size:8px;gap:3px}
   .helper-action span{width:16px;height:16px;font-size:11px}
 }
+
+/* Feedback sits directly beneath the quick actions, aligned to their right edge. */
+.header-tools{display:flex;flex-direction:column;align-items:flex-end;gap:7px;margin-left:auto;flex:0 0 auto}
+.feedback-action{min-height:32px;padding:5px 9px;border-color:#d0aa4c;background:#f8f2df;color:#66521e}
+.feedback-action span{background:#d0aa4c;color:#fff}
+.feedback-action:hover{background:#f3e8c5}
+.feedback-form{display:grid;gap:8px}
+.feedback-form label{font-size:13px;font-weight:700}
+.feedback-form label span{color:#718078;font-weight:400}
+.feedback-form select,.feedback-form textarea{width:100%;border:1px solid rgba(52,78,67,.22);border-radius:10px;background:#fffdf6;color:#283a34;padding:10px;font:inherit}
+.feedback-form textarea{resize:vertical;min-height:92px;line-height:1.4}
+.feedback-form :focus-visible{outline:3px solid #d0aa4c;outline-offset:2px}
+.feedback-submit{justify-self:start;border:0;border-radius:999px;padding:10px 16px;background:#d0aa4c;color:#fff;font:700 14px Arial,Helvetica,sans-serif;cursor:pointer}
+.feedback-status{margin:0;color:#687970;font-size:12px;line-height:1.4}
+@media(max-width:700px){
+  .header-tools{position:absolute;left:0;top:calc(env(safe-area-inset-top) + 43px);width:calc(100vw - 24px);align-items:flex-end;gap:5px;z-index:2}
+  .header-actions{position:static;margin:0;width:max-content;max-width:100%}
+  .feedback-action{min-height:30px}
+}
+@media(max-width:380px){.header-tools{top:calc(env(safe-area-inset-top) + 42px);width:calc(100vw - 18px)}}
