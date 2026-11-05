@@ -158,4 +158,3 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
   .feedback-action{min-height:30px}
 }
 @media(max-width:380px){.header-tools{top:calc(env(safe-area-inset-top) + 42px);width:calc(100vw - 18px)}}
-
