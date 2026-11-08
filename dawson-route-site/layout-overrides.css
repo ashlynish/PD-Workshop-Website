@@ -84,12 +84,12 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
 @media(max-width:380px){.header-actions{gap:4px}.helper-action{padding:5px 6px;font-size:9px}.helper-action span{width:17px;height:17px}}
 
 /* Refine the local helper layout: compact route buttons, quick guide access, and map hint. */
-.page{position:relative;grid-template-rows:172px auto auto}
+.page{position:relative;grid-template-rows:200px auto auto}
 .header-actions{flex-wrap:nowrap;gap:6px;margin-top:0;align-self:flex-start;white-space:nowrap}
 .helper-action{min-height:38px;padding:7px 9px;font-size:11px;gap:5px}
 .guide-action{border-color:#d0aa4c;background:#f4e7b9;color:#59471e}
 .guide-action span{background:#c69b35;color:#fff}
-.map-side-note{position:static;display:block;grid-column:1/-1;grid-row:3;align-self:end;min-height:0}
+.map{grid-row:1}.map-side-note{position:static;display:block;grid-column:1/-1;grid-row:2;align-self:end;min-height:0}
 .map-side-note .notice{margin-left:auto}
 .map-hint{position:absolute;top:146px;right:24px;width:128px;text-align:center;font-size:10px;line-height:1.25}
 .sequence-list{gap:7px}
@@ -112,7 +112,7 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
   .helper-action{min-height:34px;padding:6px 8px;gap:4px;font-size:10px}
   .helper-action span{width:19px;height:19px;font-size:12px}
   .map-hint{top:calc(env(safe-area-inset-top) + 9px + clamp(102px,26vw,122px) + 4px);right:12px;width:clamp(102px,26vw,122px);font-size:9px}
-  .map-side-note{grid-row:3}
+  .map-side-note{grid-row:2}
   .sequence-list{gap:6px}
   .sequence-list>li>.sequence-step,.sequence-group .sequence-step.sequence-substep{height:44px;min-height:44px;padding:5px 8px}
   .step-number,.sequence-substep .step-number{width:28px;height:28px;flex-basis:28px}
@@ -158,3 +158,88 @@ html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
   .feedback-action{min-height:30px}
 }
 @media(max-width:380px){.header-tools{top:calc(env(safe-area-inset-top) + 42px);width:calc(100vw - 18px)}}
+
+
+/* Place feedback directly under Precaution. */
+.header-actions{flex-direction:column;align-items:flex-start;gap:6px}
+.header-action-row{display:flex;align-items:flex-start;gap:6px}
+
+/* Main-page activity guides complement the route and map overview. */
+.activity-guides{grid-column:1/-1;grid-row:3;min-width:0;margin:10px 0 22px}
+.activity-guides-heading{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:4px 12px;margin-bottom:12px}
+.activity-guides-heading .sequence-eyebrow{grid-column:1/-1;margin:0}
+.activity-guides-heading h2{margin:0;color:#273a34;font-size:clamp(21px,2.5vw,28px)}
+.activity-guides-heading>p:last-child{margin:0;color:#62746d;font-size:12px;text-align:right}
+.activity-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.activity-guide-card{--guide-color:#eabbb1;display:grid;grid-template-columns:minmax(130px,.82fr) minmax(0,1fr);align-items:center;gap:14px;padding:14px;border:1px solid rgba(52,78,67,.16);border-top:4px solid var(--guide-color);border-radius:14px;background:rgba(255,255,255,.56);color:#283a34}
+.activity-guide-door{--guide-color:#ec9ca4}
+.activity-guide-look{--guide-color:#d8eef8}
+.activity-guide-route-ramps{--guide-color:#eabbb1}
+.activity-guide-letter{display:block;align-self:start;min-height:100%}
+.activity-guide-letter .activity-guide-copy{max-width:760px}
+.activity-guide-calm{--guide-color:#c8cec6}
+.activity-guide-wc{--guide-color:#b8d9e8}
+.activity-guide-drink{--guide-color:#eacc98}
+.activity-guide-park{--guide-color:#aacfc5}
+.sequence-group-label.sequence-group-button{width:100%;min-height:0;height:auto;padding:0 2px 6px;border:0;border-radius:0;background:transparent;box-shadow:none;color:inherit;font:inherit;cursor:pointer;display:flex;align-items:center;text-align:left;gap:9px}
+.sequence-group-label.sequence-group-button:hover{background:transparent;border-color:transparent}
+.sequence-group-label.sequence-group-button:active{transform:none}
+.sequence-group-label.sequence-group-button:focus-visible{outline:2px solid #417f70;outline-offset:2px;border-radius:6px}
+.sequence-group-button .step-arrow{margin-left:auto;font-size:20px}
+.activity-guide-image{min-width:0;margin:0}
+.activity-guide-image img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:#e7e4d8}
+.activity-guide-image figcaption{margin-top:5px;color:#62746d;font-size:10px;line-height:1.25;text-align:center}
+.activity-guide-copy{min-width:0}
+.activity-guide-kicker{margin:0 0 3px;color:#71877d;font-size:10px;font-weight:800;letter-spacing:.14em}
+.activity-guide-copy h3{margin:0 0 9px;color:#273a34;font-size:clamp(17px,1.8vw,22px);line-height:1.08}
+.activity-guide-instruction{margin-top:8px;font-size:12px;line-height:1.35}
+.activity-guide-instruction strong{display:block;margin-bottom:2px}
+.activity-guide-instruction p{margin:0}
+.activity-guide-instruction.safety{padding:8px 9px;border-left:3px solid #d7a656;border-radius:0 7px 7px 0;background:#f8f2df}
+@media(max-width:850px){.activity-guide-card{grid-template-columns:minmax(110px,.72fr) minmax(0,1fr);gap:10px;padding:11px}.activity-guide-instruction{font-size:11px}}
+@media(max-width:700px){.activity-guides{grid-row:3;margin-top:6px}.activity-guides-heading{grid-template-columns:1fr;gap:3px}.activity-guides-heading>p:last-child{text-align:left}.activity-guide-grid{grid-template-columns:1fr;gap:10px}.activity-guide-card{grid-template-columns:minmax(105px,.62fr) minmax(0,1fr);gap:12px;padding:12px}.activity-guide-copy h3{font-size:19px}}
+@media(max-width:380px){.activity-guide-card{grid-template-columns:1fr}.activity-guide-image img{aspect-ratio:16/8}.activity-guide-copy h3{font-size:18px}}
+
+/* WC activity steps stay in order and expand in place. */
+.activity-guide-wc-group{grid-column:1/-1;display:block;padding:14px;--guide-color:#b8d9e8}
+.activity-guide-look-group{grid-column:1/-1;display:block;padding:14px;--guide-color:#d8eef8}
+.activity-guide-ramp-group{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch;gap:10px;padding:14px;--guide-color:#eabbb1}
+.wc-group-heading{margin:0 0 10px}
+.wc-group-heading>p:last-child{margin:4px 0 0;color:#62746d;font-size:12px}
+.wc-guide-steps{display:grid;gap:7px}
+.wc-guide-step{overflow:hidden;border:1px solid rgba(52,78,67,.16);border-radius:11px;background:rgba(255,255,255,.55)}
+.wc-guide-step>summary{display:grid;grid-template-columns:92px minmax(0,1fr) 24px;align-items:center;gap:10px;min-height:48px;padding:7px 12px;cursor:pointer;list-style:none;touch-action:manipulation}
+.wc-guide-step>summary::-webkit-details-marker{display:none}
+.wc-guide-step>summary .activity-guide-kicker{margin:0;color:#466f83}
+.wc-step-title{color:#283a34;font-size:15px;font-weight:700;line-height:1.2}
+.wc-step-toggle{width:22px;height:22px;position:relative;border-radius:50%;background:#e3f1f8}
+.wc-step-toggle::before,.wc-step-toggle::after{content:"";position:absolute;left:6px;right:6px;top:10px;height:2px;border-radius:2px;background:#466f83}
+.wc-step-toggle::after{transform:rotate(90deg)}
+.wc-guide-step[open]>summary{border-bottom:1px solid rgba(52,78,67,.12);background:#f4f8f8}
+.wc-guide-step[open] .wc-step-toggle::after{display:none}
+.wc-step-content{display:grid;grid-template-columns:minmax(160px,.72fr) minmax(0,1fr);align-items:center;gap:14px;padding:12px}
+.ramp-guide-content{grid-template-columns:minmax(160px,.72fr) minmax(0,1fr)}
+.ramp-guide-step>summary .activity-guide-kicker{color:#80584f}
+.wc-step-content .activity-guide-instruction:first-child{margin-top:0}
+@media(max-width:700px){.activity-guide-wc-group,.activity-guide-look-group,.activity-guide-ramp-group{padding:12px}.wc-guide-step>summary{grid-template-columns:78px minmax(0,1fr) 22px;gap:7px;padding:7px 9px}.wc-step-title{font-size:13px}.wc-step-content{grid-template-columns:minmax(105px,.62fr) minmax(0,1fr);gap:10px;padding:10px}.ramp-guide-content{grid-template-columns:minmax(105px,.62fr) minmax(0,1fr)}.wc-step-content .activity-guide-instruction{font-size:11px}}
+@media(max-width:380px){.wc-step-content{grid-template-columns:1fr}.wc-step-content .activity-guide-image img{aspect-ratio:16/8}}
+
+/* Coordinate based station layout with placements refined from the marked positions. */
+.page{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;align-content:start;gap:16px 0}
+.header{grid-column:1/-1;grid-row:1}
+.map{grid-column:1/-1;grid-row:2;justify-self:center;align-self:start;position:relative;width:min(100%,760px);height:auto;min-height:0;max-height:none;aspect-ratio:1.53;margin:0 auto;transform:none;border-radius:16px;background:#f8f7ef;border:1px solid rgba(52,78,67,.18);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+.map-route{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.map-route polyline{fill:none;stroke:#789b90;stroke-width:1.3;stroke-dasharray:2.2 1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.map .circle{width:clamp(48px,5.2vw,64px);height:auto;min-width:0;min-height:0;aspect-ratio:1;padding:5px;border:1px solid rgba(52,78,67,.16);box-shadow:0 3px 10px rgba(39,58,52,.12);z-index:2}
+.map .circle span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;max-width:100%;font-size:9px;line-height:1.05;overflow-wrap:anywhere}
+.map .circle span small{font-size:11px;letter-spacing:0;margin:0;color:#283a34}
+.map .c-look{background:#d8eef8}.map .c-route-ramps{background:#eabbb1}
+.map .circle:focus-visible{outline:3px solid #417f70;outline-offset:2px}
+.map-side-note{grid-column:1/-1;grid-row:3;position:static;display:block;align-self:start;text-align:center;min-height:0;margin:0}
+.map-hint{position:static;width:auto;margin:0;color:#62746d;font-size:12px;line-height:1.4;text-align:center}
+.activity-guides{grid-column:1/-1;grid-row:4}
+@media(max-width:700px){.page{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;gap:10px 0}.header{grid-column:1/-1;grid-row:1;min-height:122px}.map{grid-column:1/-1;grid-row:2;width:min(100%,760px);height:auto;min-height:0;aspect-ratio:1.53}.map .circle{width:clamp(35px,7vw,44px);height:auto;min-width:0;min-height:0;padding:3px}.map .circle span{font-size:7px;line-height:1.02}.map .circle span small{font-size:9px}.map-side-note{grid-row:3}.map-hint{font-size:10px}.activity-guides{grid-row:4;margin-top:2px}}
+@media(max-width:380px){.header{min-height:116px}.map .circle{width:34px}.map .circle span{font-size:6.5px}}
+
+.map-route{display:none}
+
